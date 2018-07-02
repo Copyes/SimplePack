@@ -1,7 +1,7 @@
-// 教程不在这里，看 roid.js
+const fs = require('fs')
+const path = require('path')
 const pack = require('../src/main.js')
-// const vm = require('vm')
 
 const jsBundle = pack('../example/index.js')
+fs.writeFileSync(path.resolve(__dirname, '../bundle.js'), jsBundle)
 console.log(jsBundle)
-// vm.runInThisContext(jsBundle)
